@@ -1,197 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samy KHELIL - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <style>
-        /* Add your modern, sleek CSS styles here */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        
         header {
-            background: #fff;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: var(--secondary-color);
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: var(--primary-color) 3px solid;
         }
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
         }
-        header nav ul {
+        
+        header ul {
+            padding: 0;
             list-style: none;
-            display: flex;
         }
-        header nav ul li {
-            margin-left: 1rem;
+        
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
         }
-        header nav ul li a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        
+        header #branding {
+            float: left;
         }
-        header nav ul li a:hover {
-            color: #f4a261;
-        }
-        main {
-            padding: 2rem;
-        }
-        section {
-            margin-bottom: 4rem;
-        }
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-        }
-        .project {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-        .project h3 {
-            margin-bottom: 0.5rem;
-        }
-        .project p {
-            margin-bottom: 1rem;
-        }
-        .cta {
-            display: inline-block;
-            background: #f4a261;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .cta:hover {
-            background: #e76f51;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-        }
-        footer p {
+        
+        header #branding h1 {
             margin: 0;
         }
-        footer a {
-            color: #fff;
+        
+        header nav {
+            float: right;
+            margin-top: 10px;
         }
-        @media screen and (min-width: 768px) {
-            .projects {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+        
+        header .highlight, header .current a {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .profile-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            padding: 20px 0;
+            border-bottom: #ccc 1px solid;
+        }
+        
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        #skills li {
+            flex: 0 0 30%;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        #skills li:hover {
+            transform: translateY(-5px);
+        }
+        
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .project {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .cta {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta:hover {
+            background-color: #2980b9;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        footer {
+            background: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        @media(max-width: 768px) {
+            header #branding,
+            header nav,
+            header nav li {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .project {
+                flex: 0 0 100%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Samy KHELIL</h1>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Samy</span> KHELIL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#experience">Expérience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
+
+    <div class="container">
+        <section class="profile-section">
+            <img src="/api/placeholder/150/150" alt="Samy KHELIL" class="profile-picture">
+            <h2>Samy KHELIL</h2>
+            <p>Géomatique & Data Science</p>
+        </section>
+
+        <section id="about" class="section">
+            <h2>À propos de moi</h2>
             <p>Étudiant en géomatique et passionné d'informatique et de data-science, j'ai réalisé durant mon parcours universitaire divers projets qui allient ces disciplines.</p>
         </section>
-        
-        <section id="skills">
-            <h2>Skills</h2>
+
+        <section id="skills" class="section">
+            <h2>Compétences</h2>
             <ul>
-                <li>Géomatique</li>
-                <li>Informatique</li>
-                <li>Data Science</li>
-                <li>Deep Learning</li>
-                <li>Python</li>
-                <li>TensorFlow</li>
-                <li>QGIS</li>
-                <li>FME</li>
+                <li><i class="fas fa-map-marked-alt"></i> Géomatique</li>
+                <li><i class="fas fa-laptop-code"></i> Informatique</li>
+                <li><i class="fas fa-database"></i> Data Science</li>
+                <li><i class="fas fa-brain"></i> Deep Learning</li>
+                <li><i class="fab fa-python"></i> Python</li>
+                <li><i class="fab fa-tensorflow"></i> TensorFlow</li>
+                <li><i class="fas fa-layer-group"></i> QGIS</li>
+                <li><i class="fas fa-cogs"></i> FME</li>
             </ul>
         </section>
-        
-        <section id="projects" class="projects">
-            <h2>Projects</h2>
-            
-            <div class="project">
-                <img src="/api/placeholder/800/400" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
-                <h3>Diagnostic des îlots de chaleur urbain dans la ville d'Avignon</h3>
-                <p>J'ai eu l'opportunité de travailler dans le cadre d'un atelier de professionnalisation au cours de ma licence 3 à Avignon sur un projet en collaboration avec la mairie qui consistait à effectuer un diagnostic des îlots de chaleur urbain et proposer des aménagements afin d'atténuer ce phénomène.</p>
-                <a href="https://youtu.be/EXFbMCxXPEs" target="_blank" class="cta">Voir la vidéo du projet</a>
-            </div>
-            
-            <div class="project">
-                <img src="/api/placeholder/800/400" alt="Les inondations sous la vision de la géomatique">
-                <h3>Les inondations sous la vision de la géomatique</h3>
-                <p>J'ai produit dans le cadre du module SIG suivi en licence 3 à Avignon, un site web qui traite des inondations avec une vision géographique. Le site web regroupe cartes interactives, analyses quantitatives et qualitatives.</p>
-                <a href="https://samykhelil.wixsite.com/inondations" target="_blank" class="cta">Visiter le site web</a>
-            </div>
 
-            <div class="project">
-                <img src="/api/placeholder/800/400" alt="Automatisation de processus">
-                <h3>Automatisation de processus</h3>
-                <p>Dans le cadre de l'atelier de mise en situation auquel j'ai participé en M1, j'ai été amené à réaliser des modèles de traitements de nuages de points LIDAR sur QGIS ainsi que FME afin d'automatiser des tâches et gagner du temps.</p>
-                <a href="https://ibb.co/8Pd0QpL" target="_blank" class="cta">Voir la photo HD</a>
-            </div>
-
-            <div class="project">
-                <img src="/api/placeholder/800/400" alt="Simulation des températures de surface à l'aide d'ICETOOLS">
-                <h3>Simulation des températures de surface à l'aide d'ICETOOLS</h3>
-                <p>Suite à une commande de l'École Supérieure de Design Marseille (ESDM), j'ai réalisé des simulations de températures de surface sur le cours Sextius d'Aix-en-Provence que j'ai transmis sous forme de carte interactive.</p>
-                <a href="https://public.tableau.com/views/Classeur1_16728667678680/Tableaudebord1?:language=fr-FR&:sid=&:display_count=n&:origin=viz_share_link" target="_blank" class="cta">Voir la simulation</a>
-            </div>
-            
-            <div class="project">
-                <img src="/api/placeholder/800/400" alt="Création d'un modèle de Deep Learning avec Python (TensorFlow)">
-                <h3>Création d'un modèle de Deep Learning avec Python (TensorFlow)</h3>
-                <p>Dans le cadre de l'analyse de la surchauffe urbaine de la commune d'Avignon, j'ai entrainé un modèle de Deep Learning à l'aide d'orthophotos de l'IGN pour la classification des sols en deux catégories (Perméables et imperméables).</p>
-                <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_deeplearning-geoai-datascience-activity-7191549681041059840-yvyE?utm_source=share&utm_medium=member_desktop" target="_blank" class="cta">Plus de détails sur le projet</a>
+        <section id="projects" class="section">
+            <h2>Projets</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="/api/placeholder/800/400" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
+                    <div class="project-content">
+                        <h3>Diagnostic des îlots de chaleur urbain dans la ville d'Avignon</h3>
+                        <p>Collaboration avec la mairie pour effectuer un diagnostic des îlots de chaleur urbain et proposer des aménagements.</p>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/EXFbMCxXPEs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="/api/placeholder/800/400" alt="Les inondations sous la vision de la géomatique">
+                    <div class="project-content">
+                        <h3>Les inondations sous la vision de la géomatique</h3>
+                        <p>Site web traitant des inondations avec une vision géographique, incluant cartes interactives et analyses.</p>
+                        <a href="https://samykhelil.wixsite.com/inondations" class="cta" target="_blank">Visiter le site web</a>
+                    </div>
+                </div>
+                <!-- Add more projects here -->
             </div>
         </section>
-        
-        <section id="experience">
-            <h2>Experience</h2>
-            <!-- Add your experience here -->
+
+        <section id="experience" class="section">
+            <h2>Expérience</h2>
+            <!-- Add your experience details here -->
         </section>
-        
-        <section id="contact">
+
+        <section id="contact" class="section">
             <h2>Contact</h2>
-            <!-- Add your contact information or a contact form here -->
+            <!-- Add your contact form or details here -->
         </section>
-    </main>
-    
+    </div>
+
     <footer>
         <p>&copy; 2023 Samy KHELIL. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
