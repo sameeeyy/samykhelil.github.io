@@ -1,11 +1,24 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f4a261;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #000;
+    --header-text-color: #fff;
+}
+
 /* Global styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .container {
@@ -16,8 +29,8 @@ body {
 
 /* Header */
 header {
-    background-color: black;
-    color: white;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -30,7 +43,6 @@ header {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
-    color: white;
 }
 
 nav ul {
@@ -46,19 +58,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f4a261;
+    color: var(--secondary-color);
 }
 
 /* Sections */
 .section {
     padding: 60px 0;
-    background-color: white;
+    background-color: #fff;
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -68,7 +80,7 @@ nav ul li a:hover {
     font-size: 32px;
     margin-bottom: 30px;
     text-align: center;
-    color: #333;
+    color: var(--text-color);
 }
 
 /* About Me Section */
@@ -105,7 +117,7 @@ nav ul li a:hover {
 }
 
 .skill-list li {
-    background: #f4f4f4;
+    background: var(--background-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 14px;
@@ -120,7 +132,7 @@ nav ul li a:hover {
 }
 
 .project-card {
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -151,43 +163,10 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.project-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.project-popup-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 5px;
-    max-width: 600px;
-    width: 90%;
-    max-height: 80%;
-    overflow-y: auto;
-    position: relative;
-}
-
-.close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-}
-
 .project-actions .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -201,9 +180,6 @@ nav ul li a:hover {
 /* Contact Section */
 #contact {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #contact p {
@@ -214,11 +190,11 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Bottom Bar */
+/* Footer */
 footer {
-    background-color: black;
-    color: white;
-    padding: 10px 0;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 20px 0;
     text-align: center;
     font-size: 14px;
 }
@@ -227,24 +203,43 @@ footer p {
     margin: 0;
 }
 
-footer .social-links {
+.social-links {
     list-style: none;
     padding: 0;
     margin: 20px 0 0;
 }
 
-footer .social-links li {
+.social-links li {
     display: inline-block;
     margin: 0 5px;
 }
 
-footer .social-links li a {
-    color: white;
+.social-links li a {
+    color: var(--header-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
-    front-size: 50px;
+    font-size: 16px;
 }
 
-footer .social-links li a:hover {
-    color: #f4a261;
+.social-links li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+    }
 }
