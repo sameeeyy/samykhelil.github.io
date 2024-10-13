@@ -1,130 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samy KHELIL - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+        }
+        .site-title {
+            color: white;
+        }
+        .profile-picture {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#" class="logo">Samy KHELIL</a>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="site-title">Samy KHELIL</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos de moi</a></li>
+                    <li><a href="#projects">Mes projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about" class="container">
-            <h2>About Me</h2>
+        <section id="about" class="section container">
+            <h2>À propos de moi</h2>
+            <img src="images/photo.jpg" alt="Photo de profil de Samy KHELIL" class="profile-picture">
             <div class="about-content">
-                <img src="/api/placeholder/400/400" alt="Samy KHELIL Profile Picture" class="profile-picture">
                 <p>Étudiant en géomatique et passionné d'informatique et de data-science, j'ai réalisé durant mon parcours universitaire divers projets qui allient ces disciplines.</p>
+                <h3>Mes compétences principales</h3>
+                <ul class="skill-list">
+                    <li>Géomatique</li>
+                    <li>Data Science</li>
+                    <li>Python</li>
+                    <li>QGIS</li>
+                    <li>FME</li>
+                    <li>Visualisation de données</li>
+                </ul>
             </div>
         </section>
 
-        <section id="skills" class="container">
-            <h2>Skills</h2>
-            <ul class="skill-list">
-                <li>Géomatique</li>
-                <li>Informatique</li>
-                <li>Data Science</li>
-                <li>Deep Learning</li>
-                <li>Python</li>
-                <li>TensorFlow</li>
-                <li>QGIS</li>
-                <li>FME</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="/api/placeholder/800/400" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
-                    <div class="project-info">
-                        <h3>Diagnostic des îlots de chaleur urbain dans la ville d'Avignon</h3>
-                        <p>J'ai eu l'opportunité de travailler dans le cadre d'un atelier de professionnalisation au cours de ma licence 3 à Avignon sur un projet en collaboration avec la mairie qui consistait à effectuer un diagnostic des îlots de chaleur urbain et proposer des aménagements afin d'atténuer ce phénomène.</p>
-                        <div class="project-actions">
-                            <a href="https://youtu.be/EXFbMCxXPEs" target="_blank" class="btn btn-primary"><i class="fas fa-play"></i> Voir la vidéo du projet</a>
-                        </div>
-                        <div class="project-video">
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/EXFbMCxXPEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="/api/placeholder/800/400" alt="Les inondations sous la vision de la géomatique">  
-                    <div class="project-info">
-                        <h3>Les inondations sous la vision de la géomatique</h3>
-                        <p>J'ai produit dans le cadre du module SIG suivi en licence 3 à Avignon, un site web qui traite des inondations avec une vision géographique. Le site web regroupe cartes interactives, analyses quantitatives et qualitatives.</p>
-                        <div class="project-actions">
-                            <a href="https://samykhelil.wixsite.com/inondations" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visiter le site web</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="/api/placeholder/800/400" alt="Automatisation de processus">
-                    <div class="project-info">
-                        <h3>Automatisation de processus</h3>
-                        <p>Dans le cadre de l'atelier de mise en situation auquel j'ai participé en M1, j'ai été amené à réaliser des modèles de traitements de nuages de points LIDAR sur QGIS ainsi que FME afin d'automatiser des tâches et gagner du temps.</p>
-                        <div class="project-actions">
-                            <a href="https://ibb.co/8Pd0QpL" target="_blank" class="btn btn-primary"><i class="fas fa-image"></i> Voir la photo HD</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="/api/placeholder/800/400" alt="Simulation des températures de surface à l'aide d'ICETOOLS">
-                    <div class="project-info">  
-                        <h3>Simulation des températures de surface à l'aide d'ICETOOLS</h3>
-                        <p>Suite à une commande de l'École Supérieure de Design Marseille (ESDM), j'ai réalisé des simulations de températures de surface sur le cours Sextius d'Aix-en-Provence que j'ai transmis sous forme de carte interactive.</p>
-                        <div class="project-actions">
-                            <a href="https://public.tableau.com/views/Classeur1_16728667678680/Tableaudebord1?:language=fr-FR&:sid=&:display_count=n&:origin=viz_share_link" target="_blank" class="btn btn-primary"><i class="fas fa-chart-area"></i> Voir la simulation</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="/api/placeholder/800/400" alt="Création d'un modèle de Deep Learning avec Python (TensorFlow)">
-                    <div class="project-info">
-                        <h3>Création d'un modèle de Deep Learning avec Python (TensorFlow)</h3>  
-                        <p>Dans le cadre de l'analyse de la surchauffe urbaine de la commune d'Avignon, j'ai entrainé un modèle de Deep Learning à l'aide d'orthophotos de l'IGN pour la classification des sols en deux catégories (Perméables et imperméables).</p>
-                        <div class="project-actions">
-                            <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_deeplearning-geoai-datascience-activity-7191549681041059840-yvyE?utm_source=share&utm_medium=member_desktop" target="_blank" class="btn btn-primary"><i class="fas fa-info-circle"></i> Plus de détails sur le projet</a>
-                        </div>
-                    </div>
+<section id="projects" class="section container">
+    <h2>Mes projets</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="images/Avignon.jpg" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
+            <div class="project-info">
+                <h3>Diagnostic des îlots de chaleur urbain dans la ville d'Avignon</h3>
+                <p>J'ai eu l'opportunité de travailler dans le cadre d'un atelier de professionnalisation au cours de ma licence 3 à Avignon sur un projet en collaboration avec la mairie qui consistait à effectuer un diagnostic des îlots de chaleur urbain et proposer des aménagements afin d'atténuer ce phénomène.</p>
+                <div class="project-actions">
+                    <a href="https://youtu.be/EXFbMCxXPEs" class="btn btn-primary" target="_blank">Voir la vidéo du projet</a>
                 </div>
             </div>
+        </div>
 
-        </section>
-        
-        <section id="experience" class="container">
-            <h2>Experience</h2>
-            <!-- Add your experience here -->
-        </section>
-        
-        <section id="contact" class="container">
+        <div class="project-card">
+            <img src="images/inondations.jpg" alt="Les inondations sous la vision de la géomatique">
+            <div class="project-info">
+                <h3>Les inondations sous la vision de la géomatique</h3>
+                <p>J'ai produit dans le cadre du module SIG suivi en licence 3 à Avignon, un site web qui traite des inondations avec une vision géographique. Le site web regroupe cartes interactives, analyses quantitatives et qualitatives.</p>
+                <div class="project-actions">
+                    <a href="https://samykhelil.wixsite.com/inondations" class="btn btn-primary" target="_blank">Visiter le site web</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="images/automatisation.jpg" alt="Automatisation de processus">
+            <div class="project-info">
+                <h3>Automatisation de processus</h3>
+                <p>Dans le cadre de l'atelier de mise en situation auquel j'ai participé en M1, j'ai été amené à réaliser des modèles de traitements de nuages de points LIDAR sur QGIS ainsi que FME afin d'automatiser des tâches et gagner du temps.</p>
+                <div class="project-actions">
+                    <a href="https://ibb.co/8Pd0QpL" class="btn btn-primary" target="_blank">Voir la photo HD</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="images/simulation.jpg" alt="Simulation des températures de surface à l'aide d'ICETOOLS">
+            <div class="project-info">
+                <h3>Simulation des températures de surface à l'aide d'ICETOOLS</h3>
+                <p>Suite à une commande de l'École Supérieure de Design Marseille (ESDM), j'ai réalisé des simulations de températures de surface sur le cours Sextius d'Aix-en-Provence que j'ai transmis sous forme de carte interactive.</p>
+                <div class="project-actions">
+                    <a href="https://public.tableau.com/views/Classeur1_16728667678680/Tableaudebord1?:language=fr-FR&:sid=&:display_count=n&:origin=viz_share_link" class="btn btn-primary" target="_blank">Voir la simulation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="images/IA.jpg" alt="Création d'un modèle de Deep Learning avec Python (TensorFlow)">
+            <div class="project-info">
+                <h3>Création d'un modèle de Deep Learning avec Python (TensorFlow)</h3>
+                <p>Dans le cadre de l'analyse de la surchauffe urbaine de la commune d'Avignon, j'ai entrainé un modèle de Deep Learning à l'aide d'orthophotos de l'IGN pour la classification des sols en deux catégories (Perméables et imperméables).</p>
+                <div class="project-actions">
+                    <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_deeplearning-geoai-datascience-activity-7191549681041059840-yvyE?utm_source=share&utm_medium=member_desktop" class="btn btn-primary" target="_blank">Plus de détails sur le projet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section container">
             <h2>Contact</h2>
-            <!-- Add your contact information or a contact form here -->
+            <p>Vous pouvez me contacter aux coordonnées suivantes :</p>
+            <div>Email : k2samy@hotmail.fr</div>
+            <div>Téléphone : +33 753624714</div>
         </section>
     </main>
-    
+
     <footer>
         <div class="container">
-            <p>&copy; 2023 Samy KHELIL. Tous droits réservés.</p>
+            <p>&copy; Samy KHELIL</p>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.linkedin.com/in/samy-khelil-861a8a1a9/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
