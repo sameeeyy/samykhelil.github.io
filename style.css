@@ -163,7 +163,17 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* New styles for project actions and buttons */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
 .project-actions .btn {
+    margin: 5px;
+    white-space: nowrap;
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--primary-color);
@@ -241,5 +251,15 @@ footer p {
 
     .about-content h3 {
         font-size: 20px;
+    }
+
+    .project-actions {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .project-actions .btn {
+        width: auto;
+        min-width: 200px;
     }
 }
