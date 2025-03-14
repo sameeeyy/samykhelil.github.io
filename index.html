@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Samy KHELIL - Étudiant en géomatique et passionné d'informatique et de data-science">
+    <meta name="description" content="Portfolio de Samy KHELIL - Diplomé en géomatique à la recherche d'un CDI">
     <title>Samy KHELIL - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
+    <div id="animated-background"></div>
+    
     <header>
         <div class="container">
             <h1 id="samy-khelil" class="site-title">Samy KHELIL</h1>
             <nav aria-label="Navigation principale">
                 <ul>
                     <li><a href="#about">À propos de moi</a></li>
-                    <li><a href="#projects">Mes projets</a></li>
+                    <li><a href="#timeline">Parcours</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projets</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -34,93 +38,366 @@
                     <li>Data Science (IA)</li>
                     <li>Python</li>
                     <li>QGIS</li>
-                    <li>FME</li>
-					<li>Webmapping</li>
+                    <li>ETL (Dataiku/FME)</li>
+                    <li>Webmapping</li>
                     <li>Visualisation de données</li>
                 </ul>
             </div>
         </section>
 
-<section id="projects" class="section container">
-    <h2>Mes projets</h2>
-    <div class="project-grid">
-        <article class="project-card">
-            <img src="images/imagescolorization.jpg" alt="Colorisation d'images aériennes historiques par IA">
-            <div class="project-info">
-                <h3>Colorisation d'images aériennes historiques par IA</h3>
-                <p>Points clés du projet :</p>
-                <ul>
-                    <li>Utilisation de GANs pour la colorisation automatique d'images en noir et blanc</li>
-                    <li>Développement d'une application web avec ArcGIS Experience Builder</li>
-                    <li>Visualisation comparative des images historiques de Paris et Marseille (1953)</li>
-                </ul>
-                <div class="project-actions">
-                    <a href="https://experience.arcgis.com/experience/3ac1f0ddb3194df2894ca0706249e673/?draft=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la démonstration (application web)</a>
-                    <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_ai-genai-gan-activity-7254370967206985728-4vzM?utm_source=share&utm_medium=member_desktop" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Plus de détails sur LinkedIn</a>
-                </div>
+        <section id="projects" class="section container">
+            <div class="project-grid">
+                <!-- Projet 1 -->
+                <article class="project-card">
+                    <img src="images/interface.png" alt="Interface de PointCloudFR - Plugin QGIS pour données LiDAR">
+                    <div class="project-info">
+                        <h3>PointCloudFR - Plugin QGIS pour données LiDAR</h3>
+                        <p class="project-date">Janvier 2025</p>
+                        <p class="project-description">
+                            Développement de PointCloudFR, un plugin open-source QGIS qui simplifie l'accès aux données LiDAR nationales françaises. Cet outil permet aux professionnels SIG et chercheurs de télécharger et traiter efficacement des données de nuages de points depuis l'IGN (Institut National Géographique).
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Conception d'algorithmes intelligents de sélection de tuiles avec trois stratégies de traitement</li>
+                                <li>Intégration complète avec QGIS : visualisation automatique des nuages de points</li>
+                                <li>Implémentation d'une architecture de téléchargements simultanés des tuiles LiDAR</li>
+                                <li>Développement d'un système de gestion des erreurs et de dépendances automatiques pour QGIS</li>
+                                <li>Déploiement dans le répertoire officiel des plugins QGIS (+ 1200 téléchargements)</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>Python, API QGIS, Framework Qt, Github</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/sameeeyy/PointCloudFR" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir le projet sur Github</a>
+                            <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_qgis-lidar-gaezomatique-activity-7289984491194839040-kZFM" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Plus de détails sur LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Projet 2 -->
+                <article class="project-card">
+                    <img src="images/IA.jpg" alt="Création d'un modèle d'IA pour l'analyse de l'imperméabilisation des sols et la surchauffe urbaine">
+                    <div class="project-info">
+                        <h3>Analyse de l'imperméabilisation des sols par IA</h3>
+                        <p class="project-date">2024</p>
+                        <p class="project-description">
+                            Développement d'un modèle d'intelligence artificielle pour analyser l'imperméabilisation des sols et ses impacts sur la surchauffe urbaine à partir d'images satellitaires.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Développement d'un modèle CNN (U-Net) pour la segmentation d'images satellitaires</li>
+                                <li>Classification automatique des surfaces perméables et imperméables</li>
+                                <li>Analyse de l'évolution des températures de surface par imagerie satellitaire</li>
+                                <li>Démonstration d'une augmentation de 6°C liée à l'imperméabilisation</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>Python (TensorFlow, Numpy, Rasterio), QGIS</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_deeplearning-geoai-datascience-activity-7191549681041059840-yvyE" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Plus de détails sur LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- Projet 3 -->
+                <article class="project-card">
+                    <img src="images/imagescolorization.jpg" alt="Colorisation d'images aériennes historiques par IA">
+                    <div class="project-info">
+                        <h3>Colorisation d'images aériennes historiques par IA</h3>
+                        <p class="project-date">2024</p>
+                        <p class="project-description">
+                            Application de l'intelligence artificielle pour coloriser automatiquement des photographies aériennes historiques en noir et blanc, permettant une meilleure visualisation et compréhension de l'évolution urbaine.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Utilisation de GANs pour la colorisation automatique d'images en noir et blanc</li>
+                                <li>Développement d'une application web avec ArcGIS Experience Builder</li>
+                                <li>Visualisation comparative des images historiques de Paris et Marseille (1953)</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>GANs, ArcGIS Experience Builder, Python</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://experience.arcgis.com/experience/3ac1f0ddb3194df2894ca0706249e673/?draft=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la démonstration</a>
+                            <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_ai-genai-gan-activity-7254370967206985728-4vzM" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Plus de détails sur LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- Projet 4 -->
+                <article class="project-card">
+                    <img src="images/avignon.jpg" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
+                    <div class="project-info">
+                        <h3>Diagnostic des îlots de chaleur urbain à Avignon</h3>
+                        <p class="project-date">2023</p>
+                        <p class="project-description">
+                            Projet réalisé en collaboration avec la mairie d'Avignon dans le cadre d'un atelier de professionnalisation en licence 3, consistant à diagnostiquer les îlots de chaleur urbains et proposer des aménagements pour atténuer ce phénomène.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Analyse spatiale des températures urbaines</li>
+                                <li>Identification des zones à risque</li>
+                                <li>Proposition d'aménagements urbains correctifs</li>
+                                <li>Collaboration avec les services municipaux</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>SIG, Analyse spatiale, Cartographie thermique</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://youtu.be/EXFbMCxXPEs" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la vidéo du projet</a>
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- Projet 5 -->
+                <article class="project-card">
+                    <img src="images/inondations.jpg" alt="Les inondations sous la vision de la géomatique">
+                    <div class="project-info">
+                        <h3>Les inondations sous la vision de la géomatique</h3>
+                        <p class="project-date">2023</p>
+                        <p class="project-description">
+                            Site web développé dans le cadre du module SIG en licence 3 à Avignon, traitant des inondations avec une approche géographique et proposant des analyses quantitatives et qualitatives.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Création de cartes interactives</li>
+                                <li>Analyse des zones à risque d'inondation</li>
+                                <li>Visualisation des données hydrologiques</li>
+                                <li>Publication web des résultats d'analyse</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>Wix, SIG, Cartographie web, Analyse spatiale</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://samykhelil.wixsite.com/inondations" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visiter le site web</a>
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- Projet 6 -->
+                <article class="project-card">
+                    <img src="images/automatisation.jpg" alt="Automatisation de processus">
+                    <div class="project-info">
+                        <h3>Automatisation de processus géomatiques</h3>
+                        <p class="project-date">2024</p>
+                        <p class="project-description">
+                            Développement de modèles de traitement automatisé de nuages de points LIDAR dans le cadre d'un atelier de mise en situation en M1, permettant d'optimiser et d'accélérer les workflows géomatiques.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Création de modèles de traitements automatisés</li>
+                                <li>Optimisation des workflows pour le traitement LIDAR</li>
+                                <li>Réduction significative du temps de traitement</li>
+                                <li>Standardisation des processus d'analyse</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>QGIS, FME, ModelBuilder, Python</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://ibb.co/8Pd0QpL" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la photo HD</a>
+                        </div>
+                    </div>
+                </article>
+        
+                <!-- Projet 7 -->
+                <article class="project-card">
+                    <img src="images/simulation.jpg" alt="Simulation des températures de surface à l'aide d'ICETOOLS">
+                    <div class="project-info">
+                        <h3>Simulation des températures de surface avec ICETOOLS</h3>
+                        <p class="project-date">2023</p>
+                        <p class="project-description">
+                            Projet réalisé pour l'École Supérieure de Design Marseille (ESDM), consistant à simuler les températures de surface sur le cours Sextius d'Aix-en-Provence et à les présenter sous forme de cartographie interactive.
+                        </p>
+                        <div class="project-achievements">
+                            <h4>Points clés :</h4>
+                            <ul>
+                                <li>Modélisation des températures urbaines</li>
+                                <li>Utilisation du plugin spécialisé "ICETOOLS" dans QGIS</li>
+                                <li>Création d'une carte interactive des résultats</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technologies utilisées :</h4>
+                            <p>ICETOOLS, Tableau, SIG</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://public.tableau.com/views/Classeur1_16728667678680/Tableaudebord1?:language=fr-FR&:sid=&:display_count=n&:origin=viz_share_link" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la simulation</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </article>
+        </section>        
 
-        <article class="project-card">
-            <img src="images/IA.jpg" alt="Création d'un modèle d'IA pour l'analyse de l'imperméabilisation des sols et la surchauffe urbaine">
-            <div class="project-info">
-                <h3>Création d'un modèle d'IA pour l'analyse de l'imperméabilisation des sols et la surchauffe urbaine</h3>
-                <p>Points clés du projet :</p>
-                <ul>
-                    <li>Développement d'un modèle CNN (U-Net) pour la segmentation d'images satellitaires</li>
-                    <li>Classification automatique des surfaces perméables et imperméables</li>
-                    <li>Analyse de l'évolution des températures de surface par imagerie satellitaire</li>
-                    <li>Démonstration d'une augmentation de 6°C liée à l'imperméabilisation</li>
-                </ul>
-                <div class="project-actions">
-                    <a href="https://www.linkedin.com/posts/samy-khelil-861a8a1a9_deeplearning-geoai-datascience-activity-7191549681041059840-yvyE?utm_source=share&utm_medium=member_desktop" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Plus de détails sur LinkedIn</a>
-                </div>
+        <section id="certifications" class="section container">
+            <h2>Certifications</h2>
+            <div class="certification-grid">
+                <article class="certification-card">
+                    <div class="certification-header">
+                        <img src="images/dataiku.png" alt="Dataiku Advanced Designer">
+                        <h3>Dataiku Advanced Designer</h3>
+                    </div>
+                    <div class="certification-content">
+                        <div class="certification-details">
+                            <p class="certification-date">Obtenu en janvier 2025</p>
+                            <p class="certification-issuer">Délivré par: Dataiku</p>
+                        </div>
+                        <div class="certification-motivation">
+                            <h4>Pourquoi cette certification ?</h4>
+                            <p>Pour maîtriser les fonctionnalités avancées de la plateforme Dataiku et développer des workflows data complexes en environnement professionnel.</p>
+                        </div>
+                        <div class="certification-skills">
+                            <h4>Compétences acquises</h4>
+                            <ul>
+                                <li>Automatisation de workflows data</li>
+                                <li>Intégration de modèles ML avancés</li>
+                                <li>Gestion de projets data à grande échelle</li>
+                            </ul>
+                        </div>
+                        <a href="https://verify.skilljar.com/c/imockhdsp9ij" class="btn btn-primary">Voir le certificat</a>
+                    </div>
+                </article>
+        
+                <article class="certification-card">
+                    <div class="certification-header">
+                        <img src="images/dataiku.png" alt="Dataiku Core Designer">
+                        <h3>Dataiku Core Designer</h3>
+                    </div>
+                    <div class="certification-content">
+                        <div class="certification-details">
+                            <p class="certification-date">Obtenu en décembre 2024</p>
+                            <p class="certification-issuer">Délivré par: Dataiku</p>
+                        </div>
+                        <div class="certification-motivation">
+                            <h4>Pourquoi cette certification ?</h4>
+                            <p>Pour acquérir une maîtrise fondamentale de la plateforme Dataiku DSS et développer des compétences essentielles en préparation et analyse de données.</p>
+                        </div>
+                        <div class="certification-skills">
+                            <h4>Compétences acquises</h4>
+                            <ul>
+                                <li>Conception de workflows data</li>
+                                <li>Préparation et exploration de données</li>
+                                <li>Visualisation et reporting</li>
+                            </ul>
+                        </div>
+                        <a href="https://verify.skilljar.com/c/ctq5kzijrmhd" class="btn btn-primary">Voir le certificat</a>
+                    </div>
+                </article>
+        
+                <article class="certification-card">
+                    <div class="certification-header">
+                        <img src="images/sql.png" alt="IBM SQL">
+                        <h3>Databases and SQL for Data Science with Python</h3>
+                    </div>
+                    <div class="certification-content">
+                        <div class="certification-details">
+                            <p class="certification-date">Obtenu en novembre 2024</p>
+                            <p class="certification-issuer">Délivré par: IBM</p>
+                        </div>
+                        <div class="certification-motivation">
+                            <h4>Pourquoi cette certification ?</h4>
+                            <p>Pour approfondir mes connaissances en bases de données relationnelles et maîtriser les techniques d'extraction et d'analyse de données avec SQL et Python.</p>
+                        </div>
+                        <div class="certification-skills">
+                            <h4>Compétences acquises</h4>
+                            <ul>
+                                <li>Requêtes SQL avancées</li>
+                                <li>Manipulation de données avec Python</li>
+                                <li>Conception et gestion de bases de données</li>
+                            </ul>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/records/WM0GGOGV6O35" class="btn btn-primary">Voir le certificat</a>
+                    </div>
+                </article>
+        
+                <article class="certification-card">
+                    <div class="certification-header">
+                        <img src="images/python.png" alt="Python for Data Science">
+                        <h3>Python for Data Science, AI & Development</h3>
+                    </div>
+                    <div class="certification-content">
+                        <div class="certification-details">
+                            <p class="certification-date">Obtenu en septembre 2024</p>
+                            <p class="certification-issuer">Délivré par: IBM</p>
+                        </div>
+                        <div class="certification-motivation">
+                            <h4>Pourquoi cette certification ?</h4>
+                            <p>Pour développer des compétences solides en programmation Python appliquée aux domaines de la data science et de l'intelligence artificielle.</p>
+                        </div>
+                        <div class="certification-skills">
+                            <h4>Compétences acquises</h4>
+                            <ul>
+                                <li>Python (langage de programmation)</li>
+                                <li>Bibliothèques data science (NumPy, Pandas)</li>
+                                <li>Analyse et visualisation de données</li>
+                            </ul>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/records/V3Z0BOWXDU97" class="btn btn-primary">Voir le certificat</a>
+                    </div>
+                </article>
+        
+                <article class="certification-card">
+                    <div class="certification-header">
+                        <img src="images/languagecert.png" alt="English C2">
+                        <h3>Test of English C2 (Listening, Reading)</h3>
+                    </div>
+                    <div class="certification-content">
+                        <div class="certification-details">
+                            <p class="certification-date">Obtenu en mars 2023</p>
+                            <p class="certification-issuer">Délivré par: LANGUAGECERT</p>
+                        </div>
+                        <div class="certification-motivation">
+                            <h4>Pourquoi cette certification ?</h4>
+                            <p>Pour valider un niveau d'anglais professionnel avancé et faciliter la communication dans un environnement professionnel international.</p>
+                        </div>
+                        <div class="certification-skills">
+                            <h4>Compétences acquises</h4>
+                            <ul>
+                                <li>Anglais</li>
+                                <li>Compréhension écrite niveau C2</li>
+                                <li>Compréhension orale niveau C2</li>
+                            </ul>
+                        </div>
+                        <a href="https://badges.peoplecert.org/Badge/en/8B16D54B-17B6-4A1F-8356-963A65F6C473" class="btn btn-primary">Voir le certificat</a>
+                    </div>
+                </article>
             </div>
-        </article>
+        </section>        
 
-        <article class="project-card">
-            <img src="images/avignon.jpg" alt="Diagnostic des îlots de chaleur urbain dans la ville d'Avignon">
-            <div class="project-info">
-                <h3>Diagnostic des îlots de chaleur urbain dans la ville d'Avignon</h3>
-                <p>J'ai eu l'opportunité de travailler dans le cadre d'un atelier de professionnalisation au cours de ma licence 3 à Avignon sur un projet en collaboration avec la mairie qui consistait à effectuer un diagnostic des îlots de chaleur urbain et proposer des aménagements afin d'atténuer ce phénomène.</p>
-                <div class="project-actions">
-                    <a href="https://youtu.be/EXFbMCxXPEs" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la vidéo du projet</a>
-                </div>
+<section id="timeline" class="section container">
+    <h2>Mon Parcours</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2023-2025</h3>
+                <p>Master GEOTER (Géomatique et conduite de projets territoriaux)</p>
             </div>
-        </article>
-
-        <article class="project-card">
-            <img src="images/inondations.jpg" alt="Les inondations sous la vision de la géomatique">
-            <div class="project-info">
-                <h3>Les inondations sous la vision de la géomatique</h3>
-                <p>J'ai produit dans le cadre du module SIG suivi en licence 3 à Avignon, un site web qui traite des inondations avec une vision géographique. Le site web regroupe cartes interactives, analyses quantitatives et qualitatives.</p>
-                <div class="project-actions">
-                    <a href="https://samykhelil.wixsite.com/inondations" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visiter le site web</a>
-                </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2022-2023</h3>
+                <p>Licence en géographie et aménagement du territoire</p>
             </div>
-        </article>
-
-        <article class="project-card">
-            <img src="images/automatisation.jpg" alt="Automatisation de processus">
-            <div class="project-info">
-                <h3>Automatisation de processus</h3>
-                <p>Dans le cadre de l'atelier de mise en situation auquel j'ai participé en M1, j'ai été amené à réaliser des modèles de traitements de nuages de points LIDAR sur QGIS ainsi que FME afin d'automatiser des tâches et gagner du temps.</p>
-                <div class="project-actions">
-                    <a href="https://ibb.co/8Pd0QpL" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la photo HD</a>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <img src="images/simulation.jpg" alt="Simulation des températures de surface à l'aide d'ICETOOLS">
-            <div class="project-info">
-                <h3>Simulation des températures de surface à l'aide d'ICETOOLS</h3>
-                <p>Suite à une commande de l'École Supérieure de Design Marseille (ESDM), j'ai réalisé des simulations de températures de surface sur le cours Sextius d'Aix-en-Provence que j'ai transmis sous forme de carte interactive.</p>
-                <div class="project-actions">
-                    <a href="https://public.tableau.com/views/Classeur1_16728667678680/Tableaudebord1?:language=fr-FR&:sid=&:display_count=n&:origin=viz_share_link" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Voir la simulation</a>
-                </div>
-            </div>
-        </article>
+        </div>
     </div>
 </section>
 
