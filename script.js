@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Add touch support for mobile
             element.addEventListener('touchstart', function(e) {
-                e.preventDefault();
                 this.style.transform = 'translateY(-5px)';
             });
 

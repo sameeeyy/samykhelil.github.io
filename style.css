@@ -24,12 +24,14 @@ body {
     padding: 0;
     color: var(--text-color);
     background-color: var(--background-color);
+    touch-action: pan-y;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    touch-action: pan-y;
 }
 
 #animated-background {
@@ -89,6 +91,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
+    touch-action: pan-y;
 }
 
 .section h2 {
