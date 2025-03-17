@@ -109,12 +109,16 @@ nav ul li a:hover {
 
 .profile-picture {
     display: block;
-    margin: 0 auto 10px; /* Reduced from 20px to 10px */
-    max-width: 150px; /* Reduced from 200px to 150px */
+    margin: 0 auto 10px;
+    width: 150px; /* Fixed container width */
+    height: 150px; /* Same as width for perfect circle */
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     transition: var(--transition-normal);
+    object-fit: cover; /* Key property for handling different image dimensions */
+    object-position: center; /* Centers the image within the container */
 }
+
 
 .profile-picture:hover {
     transform: scale(1.05);
