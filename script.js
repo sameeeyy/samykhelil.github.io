@@ -61,7 +61,7 @@ function initAnimatedBackground() {
                 // Draw particle with variable opacity
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 123, 255, ${particle.opacity})`;
+                ctx.fillStyle = `rgba(0, 0, 0, ${particle.opacity})`;
                 ctx.fill();
             });
 
