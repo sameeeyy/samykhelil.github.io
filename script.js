@@ -6,87 +6,83 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initImageLoading();
 
-function initAnimatedBackground() {
-    try {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const container = document.getElementById('animated-background');
-        
-        if (!ctx || !container) {
-            throw new Error('Canvas or container not available');
-        }
-
-        // Set canvas size and style
-        function setCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        setCanvasSize();
-        // Make sure the canvas fills the container
-        canvas.style.position = 'absolute';
-        canvas.style.top = '0';
-        canvas.style.left = '0';
-        container.appendChild(canvas);
-
-        // Create more visible particles
-        const particles = [];
-        const particleCount = 100; // Increased count
-        
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 3 + 1, // Bigger radius
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.5,
-                opacity: Math.random() * 0.5 + 0.1 // Variable opacity
-            });
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    function initAnimatedBackground() {
+        try {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const container = document.getElementById('animated-background');
             
-            particles.forEach(particle => {
-                // Move particle
-                particle.x += particle.speedX;
-                particle.y += particle.speedY;
-
-                // Wrap around screen
-                if (particle.x < 0) particle.x = canvas.width;
-                if (particle.x > canvas.width) particle.x = 0;
-                if (particle.y < 0) particle.y = canvas.height;
-                if (particle.y > canvas.height) particle.y = 0;
-
-                // Draw particle with variable opacity
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 0, 0, ${particle.opacity})`;
-                ctx.fill();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
+            if (!ctx || !container) {
+                throw new Error('Canvas or container not available');
+            }
+    
+            // Set canvas size and style
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
             setCanvasSize();
-        });
-
-        // Start animation
-        animate();
-        
-    } catch (error) {
-        console.warn('Animated background initialization failed:', error);
-        const container = document.getElementById('animated-background');
-        if (container) container.remove();
+            // Make sure the canvas fills the container
+            canvas.style.position = 'absolute';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            container.appendChild(canvas);
+    
+            // Create more visible particles
+            const particles = [];
+            const particleCount = 100; // Increased count
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 3 + 1, // Bigger radius
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    opacity: Math.random() * 0.5 + 0.1 // Variable opacity
+                });
+            }
+    
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    // Move particle
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+    
+                    // Wrap around screen
+                    if (particle.x < 0) particle.x = canvas.width;
+                    if (particle.x > canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = canvas.height;
+                    if (particle.y > canvas.height) particle.y = 0;
+    
+                    // Draw particle with variable opacity
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(0, 0, 0, ${particle.opacity})`;
+                    ctx.fill();
+                });
+    
+                requestAnimationFrame(animate);
+            }
+    
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+            });
+    
+            // Start animation
+            animate();
+            
+        } catch (error) {
+            console.warn('Animated background initialization failed:', error);
+            const container = document.getElementById('animated-background');
+            if (container) container.remove();
+        }
     }
-}
 
-// Make sure to call it when the document loads
-document.addEventListener('DOMContentLoaded', function() {
-    initAnimatedBackground();
-});
     // Smooth Scrolling
     function initSmoothScrolling() {
         const navLinks = document.querySelectorAll('nav a');
@@ -187,21 +183,36 @@ document.addEventListener('DOMContentLoaded', function() {
     function initImageLoading() {
         const images = document.querySelectorAll('img');
         
-        images.forEach(img => {
-            // Add loading attribute
-            img.setAttribute('loading', 'lazy');
-            
-            // Add loaded class when image loads
-            img.addEventListener('load', function() {
-                this.setAttribute('loaded', '');
+        // Précharger toutes les images avant de les afficher
+        const imagePromises = Array.from(images).map(img => {
+            return new Promise((resolve, reject) => {
+                if (img.complete) {
+                    // L'image est déjà chargée (peut-être du cache)
+                    img.setAttribute('loaded', '');
+                    resolve();
+                } else {
+                    // Attendre que l'image se charge
+                    img.onload = () => {
+                        img.setAttribute('loaded', '');
+                        resolve();
+                    };
+                    
+                    img.onerror = () => {
+                        console.warn(`Failed to load image: ${img.src}`);
+                        reject();
+                    };
+                }
+                
+                // Ajouter l'attribut loading="lazy" pour les images en dessous de la ligne de flottaison
+                img.setAttribute('loading', 'lazy');
             });
-
-            // Handle error
-            img.addEventListener('error', function() {
-                console.warn(`Failed to load image: ${this.src}`);
-                // You can set a fallback image here if needed
-                // this.src = 'path/to/fallback-image.jpg';
-            });
+        });
+        
+        // Optionnel: vous pouvez attendre que toutes les images visibles soient chargées avant d'afficher la section
+        Promise.all(imagePromises).then(() => {
+            console.log('Toutes les images sont chargées');
+        }).catch(error => {
+            console.warn('Certaines images n\'ont pas pu être chargées', error);
         });
     }
 });
