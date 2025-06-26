@@ -159,6 +159,11 @@ nav ul li a:hover {
     box-shadow: var(--shadow-md);
 }
 
+.resume-button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add some space above the button */
+}
+
 /* Timeline Section */
 .timeline {
     position: relative;
